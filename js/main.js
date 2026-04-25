@@ -79,27 +79,31 @@ document.addEventListener('DOMContentLoaded', function () {
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
       const btn = contactForm.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
-      // Simulate sending (no backend)
-      setTimeout(() => {
+      // Let Netlify Forms handle submission
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(contactForm)).toString()
+      }).then(() => {
         btn.textContent = 'Message Sent!';
         btn.style.backgroundColor = 'var(--color-secondary)';
         btn.style.borderColor = 'var(--color-secondary)';
         contactForm.reset();
-
         setTimeout(() => {
           btn.textContent = originalText;
           btn.disabled = false;
           btn.style.backgroundColor = '';
           btn.style.borderColor = '';
         }, 3000);
-      }, 1500);
+      }).catch(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      });
     });
   }
 

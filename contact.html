@@ -54,7 +54,7 @@
               </div>
               <div>
                 <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.25rem;">Email</h4>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">youthclimateaction@outlook.com</p>
+                <p style="color: var(--color-text-muted); font-size: 0.95rem;"><a href="mailto:info@y-clap.com" style="color: var(--color-primary); text-decoration: none;">info@y-clap.com</a></p>
               </div>
             </div>
 
@@ -98,7 +98,11 @@
           <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Send Us a Message</h3>
           <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Fill out the form below and we'll get back to you as soon as possible.</p>
 
-          <form id="contact-form">
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display: none;">
+              <label>Don't fill this out: <input name="bot-field"></label>
+            </p>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
               <div class="form-group">
                 <label class="form-label" for="name">Full Name *</label>
@@ -169,7 +173,7 @@
       </div>
 
       <div style="text-align: center; margin-top: 2.5rem;" class="fade-in">
-        <a href="mailto:youthclimateaction@outlook.com?subject=YC LAP%20Application%20Inquiry" class="btn btn--primary btn--lg">Apply Now — Email Us</a>
+        <a href="mailto:info@y-clap.com?subject=YCLAP%20Application%20Inquiry" class="btn btn--primary btn--lg">Apply Now — Email Us</a>
       </div>
     </div>
   </section>
