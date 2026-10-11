@@ -204,6 +204,19 @@ p:last-child {
     grid-template-columns: 1fr;
   }
 
+  .featured-news-card > div {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .featured-news-card > div > div:first-child {
+    min-height: 260px;
+  }
+
+  .featured-news-card > div > div:last-child {
+    padding: 1.5rem !important;
+  }
+
   .section {
     padding: var(--space-lg) 0;
   }
