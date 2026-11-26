@@ -1144,6 +1144,37 @@
   font-size: 0.95rem;
 }
 
+.timeline-scroll {
+  max-width: 860px;
+  margin: 0 auto;
+  max-height: 520px;
+  overflow-y: auto;
+  padding: 0.25rem 0.5rem 0.25rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-secondary) var(--color-border);
+  -webkit-overflow-scrolling: touch;
+}
+
+.timeline-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.timeline-scroll::-webkit-scrollbar-track {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 3px;
+}
+
+.timeline-scroll .fade-in {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 @media (max-width: 768px) {
   .featured-story__media {
     min-height: 220px;
